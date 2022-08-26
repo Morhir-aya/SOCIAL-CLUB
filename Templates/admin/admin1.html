@@ -1,0 +1,84 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservations admin</title>
+    <link rel="stylesheet" href="{%static 'css/res.css'%}">
+ 
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                 <img class="logo" src="{% static 'img/logo.svg'%}" alt="">
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="{% url 'actualite2'%}">ACTUALITÉ</a></li>
+                    <li><a href="{% url 'admin1'%}">RÉSERVATIONS</a></li>
+                    <li><a href="{% url 'about'%}">ÀPROPOS</a></li>
+                    <li><a href="{% url 'contact'%}">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <div class="search">
+                
+                <a href="{% url 'index'%}"> <button class="btn" >DÉCONNEXION</button></a>
+            </div>
+
+        </div> <br><br>
+         {% for rr in res2%}
+        <section class="all">
+                <p>date: {{rr.date}}</p>
+                <p>type de reservation: {{rr.typeres}}</p>
+                <p>heure: {{rr.heure}}</p>
+                <p>status: {{rr.status}}</p>  
+                <p><a href="{% url 'more1'%}"><i class="fa fa-caret-square-o-down" aria-hidden="true"></a></i></p>
+        </section><br><br>
+        {% endfor %}
+
+        {% for s in res%}
+        <section class="all">
+                <p>date: {{s.date}}</p>
+                <p>type de reservation: {{s.typeres}}</p>
+                <p>heure: {{s.heure}}</p>
+                <p>status: {{s.status}}</p>  
+                <p><a href="{% url 'more2'%}"><i class="fa fa-caret-square-o-down" aria-hidden="true"></a></i></p>
+        </section><br><br>
+        {% endfor %}
+    
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <footer>
+            <div class="footer_cont">
+                <h3>footer</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt neque expedita atque eveniet</p>
+                <ul class="socials">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                </ul>
+                <p>OCP SOCIAL CLUB 2022</p>
+            </div>
+         </footer>
+</body>
+</html>

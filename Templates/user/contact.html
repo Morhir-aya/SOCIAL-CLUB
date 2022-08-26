@@ -1,0 +1,103 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>    
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/contact.css'%}">
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <img class="logo" src="{% static 'img/logo.svg'%}" alt="">
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="{% url 'index'%}">ACCEUIL</a></li>
+                    <li><a href="{% url 'about'%}">ÀPROPOS</a></li>
+                    <li><a href="{% url 'contact'%}">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder=".....">
+                <a href="#"> <button class="btn">Chercher</button></a>
+            </div>
+
+        </div> 
+   
+        
+        <section class="contact">
+            <div class="content">
+                <h2>Contact</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt neque 
+                    expedita atque eveniet <br> quis nesciunt. Quos nulla vero consequuntur, fugit nemo ad delectus </p>
+            </div>
+            <div class="container">
+                <div class="contactinfo">
+                    <div class="box">
+                        <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                            <div class="text">
+                                <h3>Adresse</h3>
+                                <p>24000 El jadida,<br>9 Lot Dachra,<br>Sidi Moussa</p>
+                            </div>
+                    </div>
+                    <div class="box">
+                        <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                            <div class="text">
+                                <h3>Telephone</h3>
+                                <p>063-322-8844</p>
+                            </div>
+                    </div>
+                    <div class="box">
+                        <div class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                            <div class="text">
+                                <h3>Email</h3>
+                                <p>example@gmail.com</p>
+                            </div>
+                    </div>
+                </div>
+                <div class="contactform">
+                    <form action="">
+                        
+                        <div class="inputbox">
+                            <input type="text" name="" required="required">
+                            <span>Nom et Prenom</span>
+                        </div>
+                        <div class="inputbox">
+                            <input type="text" name="" required="required">
+                            <span>Email</span>
+                        </div>
+                        <div class="inputbox">
+                            <textarea required="required" placeholder="Message"></textarea>
+                            
+                        </div>
+                        <div id="submit">
+                            <input type="submit" value="SUBMIT" id="submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+           
+        </section>
+
+        <footer>
+            <div class="footer_cont">
+                <h3>footer</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt neque expedita atque eveniet</p>
+                <ul class="socials">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                </ul>
+                <p>OCP SOCIAL CLUB 2022</p>
+            </div>
+         </footer>
+</body>
+</html>

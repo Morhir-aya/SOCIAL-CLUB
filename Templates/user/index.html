@@ -1,0 +1,87 @@
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceuil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">
+</head>
+<body>
+
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                 <img class="logo" src="{% static 'img/logo.svg'%}" alt="">
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="{% url 'index'%}">ACCEUIL</a></li>
+                    <li><a href="{% url 'about'%}">ÀPROPOS</a></li>
+                    <li><a href="{% url 'contact'%}">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder=".....">
+                <a href="#"> <button class="btn">Chercher</button></a>
+            </div>
+
+        </div> 
+        <div class="content">
+            <h1>Bienvenue,<br><span>Au Club Social</span> <br>De l'OCP</h1>
+            <p class="par">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt neque 
+                 expedita atque eveniet <br> quis nesciunt. Quos nulla vero consequuntur, fugit nemo ad delectus 
+                <br> a quae totam ipsa illum minus laudantium?</p>
+
+                <button class="cn"><a href="{% url 'inscription'%}">Rejoins Nous</a></button>
+
+            <div class="form">
+                <form method="post">
+                    {% csrf_token %}
+                    <h2>Connectez-vous</h2>
+                    <input type="email" name="email" placeholder="Email">
+                    <input type="password" name="password" placeholder="Mot de Passe">
+                    <button class="btnn" type="submit">connexion</button>
+
+                    <p class="link">vous n'avez pas de compte?<br>
+                    <a href="{% url 'inscription'%}">Inscrivez vous</a> ici</a></p>
+                    <p class="liw">Connectez-vous avec</p>
+
+                    <div class="icons">
+                        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+                    </div>
+                    </form>
+                </div>
+                    
+        </div>
+    </div>
+
+ <footer>
+    <div class="footer_cont">
+        <h3>footer</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt neque expedita atque eveniet</p>
+        <ul class="socials">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+        </ul>
+        <p>OCP SOCIAL CLUB 2022</p>
+    </div>
+ </footer>
+
+
+ 
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</body>
+</html>

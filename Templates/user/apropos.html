@@ -1,0 +1,69 @@
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>A propos</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/apropos.css'%}">
+        <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+        <style>
+          
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div class="navbar">
+                <div class="icon">
+                    <img class="logo" src="{% static 'img/logo.svg'%}" alt="">
+                </div>
+    
+                <div class="menu">
+                    <ul>
+                        <li><a href="{% url 'index'%}">ACCEUIL</a></li>
+                        <li><a href="{% url 'about'%}">ÀPROPOS</a></li>
+                        <li><a href="{% url 'contact'%}">CONTACT</a></li>
+                    </ul>
+                </div>
+    
+                <div class="search">
+                    <input class="srch" type="search" name="" placeholder=".....">
+                    <a href="#"> <button class="btn">Chercher</button></a>
+                </div>
+    
+            </div> <br>
+
+        <section class="all">
+            <div class = "content">
+                <br>
+                <h2>About Us</h2>
+                <span><!-- line here --></span>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis aspernatur voluptas inventore ab voluptates nostrum minus illo laborum harum laudantium earum ut, temporibus fugiat sequi explicabo facilis unde quos corporis!</p>
+                <ul class = "links">
+                    <li><a href = "#">work</a></li>
+                    <div class = "horizantal-line"></div><br>
+                    <li><a href = "#">service</a></li>
+                    <div class = "horizantal-line"></div><br>
+                    <li><a href = "#">contact</a></li>
+                </ul><br>
+                </ul>
+            </div>
+        </section><br><br>
+
+        <footer>
+            <div class="footer_cont">
+                <h3>footer</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt neque expedita atque eveniet</p>
+                <ul class="socials">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                </ul>
+                <p>OCP SOCIAL CLUB 2022</p>
+            </div>
+         </footer>
+
+    </body>
+</html>

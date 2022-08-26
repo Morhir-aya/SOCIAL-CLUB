@@ -1,0 +1,77 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualité</title>
+    <link rel="stylesheet" href="{%static 'css/actualite.css'%}">
+    <link rel="stylesheet" href="{%static 'css/actualite.js'%}">
+ 
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                 <img class="logo" src="{% static 'img/logo.svg'%}" alt="">
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="{% url 'actualite2'%}">ACTUALITÉ</a></li>
+                    <li><a href="{% url 'admin1' %}">RÉSERVATIONS</a></li>
+                    <li><a href="{% url 'about'%}">ÀPROPOS</a></li>
+                    <li><a href="{% url 'contact'%}">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <div class="search">
+                
+                <a href="{% url 'index'%}"> <button class="btn">DÉCONNEXION</button></a>
+            </div>
+
+        </div> <br><br>
+        <section class="res">
+           <a href="{% url 'post' %}"  class="btt"><i class="fa fa-plus" aria-hidden="true"></i></a>
+        </section><br><br>
+
+        {% for a in act%}
+        <section class="all">
+            <br><br>
+                <h2>{{a.titre}}</h2>
+                <span><!-- line here --></span>
+                {% if a.image%}
+                <img class="iimg" src="{{a.image.url}}" width=500>
+                {% endif %} 
+                <p>{{a.description}}</p>
+                <p>date: {{a.date}}</p>
+            <div class="voting">
+                <button class="bt" id="likebtn">
+                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                </button>
+                <!-- <input class="inp" type="number" id="input1" value="0" name="">-->
+
+                <button class="bt" id="joinbtn">Parcticiper</button>
+                <!--<input class="inp" type="number" id="input2" value="0" name="">-->
+            </div>
+        </section><br><br>
+{% endfor %}
+
+        
+        <footer>
+            <div class="footer_cont">
+                <h3>footer</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt neque expedita atque eveniet</p>
+                <ul class="socials">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                </ul>
+                <p>OCP SOCIAL CLUB 2022</p>
+            </div>
+         </footer>
+</body>
+</html>

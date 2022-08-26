@@ -1,0 +1,72 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <title>Post1</title>
+    <link rel="stylesheet" href="{%static 'css/actualitéA.css'%}">
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                 <img class="logo" src="{% static 'img/logo.svg'%}" alt="">
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="{% url 'actualite2'%}">ACTUALITÉ</a></li>
+                    <li><a href="{% url 'admin1'%}">RÉSERVATIONS</a></li>
+                    <li><a href="{% url 'about'%}">ÀPROPOS</a></li>
+                    <li><a href="{% url 'contact'%}">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <div class="search">
+                <a href="{% url 'index'%}"> <button class="btn">DÉCONNEXION</button></a>
+            </div>
+
+        </div> 
+<br>
+<div class="main_bg">
+    <div class="form">
+        <div class="form-text">
+            <h1>Nouvelle publication</h1>
+        </div>
+        <div class="main-form">
+            {% if submitted %}
+                Publication effectuée !!!
+            {% else %}
+            <form  method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+               
+            {{ form.as_p }}
+ 
+                <div id="submit">
+                    <input type="submit" value="SUBMIT" id="submit">
+                </div><br>
+
+
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</div><br><br>
+    <footer>
+        <div class="footer_cont">
+            <h3>footer</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt neque expedita atque eveniet</p>
+            <ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+            </ul>
+            <p>OCP SOCIAL CLUB 2022</p>
+        </div>
+     </footer>
+</body>
+</html>
