@@ -4,11 +4,6 @@ from django.db import models
 
 # Create your models here.
 
-class Compte(models.Model):
-    username = models.CharField(max_length=10,default='DEFAULT VALUE')
-    Email = models.EmailField(max_length=254)
-    password=models.CharField(max_length=10)
-
 class Post(models.Model):
     date = models.DateField()
     titre = models.CharField(max_length=500)

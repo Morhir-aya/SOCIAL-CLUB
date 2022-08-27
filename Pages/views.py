@@ -1,3 +1,4 @@
+from atexit import register
 from django.shortcuts import render, redirect 
 from .models import *
 from .forms import *
@@ -9,9 +10,9 @@ from django.contrib import messages
 # Create your views here.
 def index(request):
     if request.method == "POST":
-        email = request.POST['email']
+        username = request.POST['username']
         password = request.POST['password']
-        user = authenticate(request, Email=email, password=password)
+        user = authenticate(request,username=username,password=password)
         if user is not None:
             login(request, user)
             return redirect('actualite')
@@ -24,13 +25,20 @@ def index(request):
 
 def inscription(request):
     if request.method == 'POST':
-        username = request.POST.get('username')
-        email = request.POST.get('email')
-        password = request.POST.get('password')
-        data = Compte(username=username, Email=email,password=password)
-        data.save()
-
-    return render(request,'user/inscription.html')
+        username = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password']
+        if User.objects.filter(username = username).exists():
+           messages.error(request, "Username already taken")
+        if User.objects.filter(email = email).exists():
+           messages.error(request, "email already taken")
+        else:
+           user= User.objects.create(username=username, email=email, password=password)
+           user.save()
+           messages.success(request, "registration successfull!!")
+           return redirect('index')
+    else:
+        return render(request,'user/inscription.html')
 
 def about(request):
     return render(request,'user/apropos.html')

@@ -42,9 +42,12 @@
 
             <div class="form">
                 <form method="post">
+                    {% for message in messages %}
+                <p>{{message}}</p>
+                {% endfor %}
                     {% csrf_token %}
                     <h2>Connectez-vous</h2>
-                    <input type="email" name="email" placeholder="Email">
+                    <input type="text" name="username" placeholder="Username">
                     <input type="password" name="password" placeholder="Mot de Passe">
                     <button class="btnn" type="submit">connexion</button>
 
