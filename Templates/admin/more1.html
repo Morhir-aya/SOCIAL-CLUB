@@ -37,7 +37,7 @@
             
         </div>
         <div class="main-form">
-            <form action="index.php" method="get">
+            <form method="get">
                 {% for rr in res2%}
                 <div>
                     <span>Nom et Prénom: {{rr.Nom_Prenom}}</span>
@@ -67,16 +67,16 @@
                     <span>Numero de Telephone: {{rr.Tel}}</span>
                     
                 </div>
+<form>            
+    {{ form.as_p }}
+
                 <div id="submit">
-                    <select id="submit" required>
-                        <option value="1">En cours de traitement</option>
-                        <option value="2">Accepté</option>
-                        <option value="3">Refusé</option>
-                    </select>
-                </div>
+                    <input type="submit" value="SUBMIT" id="submit">
+                </div><br>
+            </form>
                 {% endfor %}
 
-            </form>
+            
         </div>
     </div>
 </div><br><br>

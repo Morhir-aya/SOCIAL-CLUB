@@ -25,11 +25,18 @@
                     <li><a href="{% url 'contact'%}">CONTACT</a></li>
                 </ul>
             </div>
-
+            {% if user.is_authenticated %}
             <div class="search">
-                <input class="srch" type="search" name="" placeholder=".....">
-                <a href="#"> <button class="btn">Chercher</button></a>
+                
+                <a href="{% url 'logout' %}"> <button class="btn"> &nbsp;Deconnexion&nbsp; </button></a>
             </div>
+            {% else %}
+            <div class="search">
+                
+                <a href="#"> <button class="btn"> &nbsp;Connexion&nbsp; </button></a>
+            </div>
+            {% endif %}
+            
 
         </div> 
         <div class="content">
@@ -46,9 +53,9 @@
                 <p>{{message}}</p>
                 {% endfor %}
                     {% csrf_token %}
-                    <h2>Connectez-vous</h2>
-                    <input type="text" name="username" placeholder="Username">
-                    <input type="password" name="password" placeholder="Mot de Passe">
+                    
+                    <input type="text" name="username" placeholder="Username"><br><br>
+                    <input type="password" name="password" placeholder="Mot de Passe"><br><br>
                     <button class="btnn" type="submit">connexion</button>
 
                     <p class="link">vous n'avez pas de compte?<br>

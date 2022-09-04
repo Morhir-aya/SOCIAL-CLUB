@@ -1,4 +1,3 @@
-from atexit import register
 from django.shortcuts import render, redirect 
 from .models import *
 from .forms import *
@@ -17,10 +16,16 @@ def index(request):
             login(request, user)
             return redirect('actualite')
         else:
-            messages.success(request, ("try again"))
+            messages.error(request, ("try again"))
             return redirect('index')
     else:
         return render(request,'user/index.html', {})
+
+
+def logout_user(request):
+    logout(request)
+    messages.success(request, ("you were logged out"))
+    return render(request, 'user/index.html')
 
 
 def inscription(request):
@@ -33,7 +38,7 @@ def inscription(request):
         if User.objects.filter(email = email).exists():
            messages.error(request, "email already taken")
         else:
-           user= User.objects.create(username=username, email=email, password=password)
+           user= User.objects.create_user(username, email, password)
            user.save()
            messages.success(request, "registration successfull!!")
            return redirect('index')
@@ -88,7 +93,17 @@ def admin1(request):
     return render(request,'admin/admin1.html',{"res":resSport.objects.all(), "res2":resRestauration.objects.all()})
 
 def more1(request):
-    return render(request,'admin/more1.html', {"res2":resRestauration.objects.all()})
+    submitted = False
+    if request.method == "POST":
+        form = Rstatus(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('?submitted=True')
+        else:
+            form = Rstatus
+            if 'submitted' in request.GET:
+                submitted = True
+    return render(request,'admin/more1.html', {"res2":resRestauration.objects.all()}, {'form':form, 'submitted':submitted})
 
 def more2(request):
     return render(request,'admin/more2.html',{"res":resSport.objects.all()})
