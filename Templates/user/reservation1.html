@@ -24,10 +24,12 @@
                 </ul>
             </div>
 
+            {% if user.is_authenticated %}
             <div class="search">
-                <a href="{% url 'index'%}"> <button class="btn">DÉCONNEXION</button></a>
+                
+                <a href="{% url 'logout' %}"> <button class="btn"> &nbsp;Deconnexion&nbsp; </button></a>
             </div>
-
+            {% endif %}
         </div> 
 <br>
 <div class="main_bg">

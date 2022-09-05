@@ -14,7 +14,10 @@ def index(request):
         user = authenticate(request,username=username,password=password)
         if user is not None:
             login(request, user)
-            return redirect('actualite')
+            if user.is_staff:
+                return redirect('actualite2')
+            else:
+                return redirect('actualite')
         else:
             messages.error(request, ("try again"))
             return redirect('index')
@@ -93,17 +96,7 @@ def admin1(request):
     return render(request,'admin/admin1.html',{"res":resSport.objects.all(), "res2":resRestauration.objects.all()})
 
 def more1(request):
-    submitted = False
-    if request.method == "POST":
-        form = Rstatus(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('?submitted=True')
-        else:
-            form = Rstatus
-            if 'submitted' in request.GET:
-                submitted = True
-    return render(request,'admin/more1.html', {"res2":resRestauration.objects.all()}, {'form':form, 'submitted':submitted})
+    return render(request,'admin/more1.html', {"res2":resRestauration.objects.all()})
 
 def more2(request):
     return render(request,'admin/more2.html',{"res":resSport.objects.all()})
