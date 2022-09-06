@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 *{
     box-sizing: border-box;
     padding: 0;
@@ -20,7 +20,7 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background: #fff;
+    background: rgb(189, 178, 178);
 }
 
 .icon{
@@ -76,32 +76,16 @@ ul li a:hover{
     margin-left: 270px;
 }
 
-.srch{
-    font-family: 'Times New Roman';
-    width: 200px;
-    height: 40px;
-    background: transparent;
-    border: 1px solid #1e7434;
-    margin-top: 13px;
-    color: rgb(59, 56, 56);
-    border-right: none;
-    font-size: 16px;
-    float: left;
-    padding: 10px;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
-}
 
 .btn{
-    width: 100px;
+    width: auto;
     height: 40px;
     background: #1e7434;
     border: 2px solid #1e7434;
     margin-top: 13px;
     color: #fff;
     font-size: 15px;
-    border-bottom-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-radius: 5px;
     transition: 0.2s ease;
     cursor: pointer;
 }
@@ -113,9 +97,7 @@ ul li a:hover{
     outline: none;
 }
 
-.srch:focus{
-    outline: none;
-}
+
 
 
 /*fin navbar*/

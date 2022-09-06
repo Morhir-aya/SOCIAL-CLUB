@@ -15,15 +15,33 @@
                 <img class="logo" src="{% static 'img/logo.svg'%}" alt="">
             </div>
 
-            <div class="menu">
-                <ul>
+          <div class="menu">
+            <ul>
+            {% if user.is_authenticated %}
+                    <li><a href="{% url 'actualite'%}">ACTUALITÉ</a></li>
+
+                    {% if user.is_staff %}
+                    <li><a href="{% url 'admin1'%}">RÉSERVATIONS</a></li>
+                    {% else %}
+                    <li><a href="{% url 'reservation'%}">RÉSERVATIONS</a></li>
+                    {% endif %}
+
+                    <li><a href="{% url 'about'%}">ÀPROPOS</a></li>
+                    <li><a href="{% url 'contact'%}">CONTACT</a></li>
+            {% else %}
                     <li><a href="{% url 'index'%}">ACCEUIL</a></li>
                     <li><a href="{% url 'about'%}">ÀPROPOS</a></li>
                     <li><a href="{% url 'contact'%}">CONTACT</a></li>
-                </ul>
-            </div>
+            {% endif %}
+            </ul>
+          </div>
 
-            
+          {% if user.is_authenticated %}
+          <div class="search">
+              
+              <a href="{% url 'logout' %}"> <button class="btn"> &nbsp;Deconnexion&nbsp; </button></a>
+          </div>
+          {% endif %}
 
         </div> 
    
@@ -58,26 +76,7 @@
                             </div>
                     </div>
                 </div>
-                <div class="contactform">
-                    <form action="">
-                        
-                        <div class="inputbox">
-                            <input type="text" name="" required="required">
-                            <span>Nom et Prenom</span>
-                        </div>
-                        <div class="inputbox">
-                            <input type="text" name="" required="required">
-                            <span>Email</span>
-                        </div>
-                        <div class="inputbox">
-                            <textarea required="required" placeholder="Message"></textarea>
-                            
-                        </div>
-                        <div id="submit">
-                            <input type="submit" value="SUBMIT" id="submit">
-                        </div>
-                    </form>
-                </div>
+                
             </div>
            
         </section>

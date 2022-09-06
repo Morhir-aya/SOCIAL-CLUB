@@ -47,19 +47,22 @@
         </section><br><br>
         {% for r in res%}
         <section class="all">
-                <p>date: {{r.date}}</p>
-                <p>type de réservation: {{r.typeres}}</p>
-                <p>heure: {{r.heure}}</p>
-                <p>status: {{r.status}}</p>  
+            <br>
+            <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a><br>
+                <p>Date: {{r.date}}</p>
+                <p>Type de Réservation: {{r.typeres}}</p>
+                <p>Heure: {{r.heure}}</p>
+                <p>Status: {{r.status}}</p>  
         </section><br><br>
         {% endfor %}
     
         {% for rr in res2%}
-        <section class="all">
-                <p>date: {{rr.date}}</p>
-                <p>type de réservation: {{rr.typeres}}</p>
-                <p>heure: {{rr.heure}}</p>
-                <p>status: {{rr.status}}</p>  
+        <section class="all"><br>
+            <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a><br>
+                <p>Date: {{rr.date}}</p>
+                <p>Type de réservation: {{rr.typeres}}</p>
+                <p>Heure: {{rr.heure}}</p>
+                <p>Status: {{rr.status}}</p>  
         </section><br><br>
         {% endfor %}
 

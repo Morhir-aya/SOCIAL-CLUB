@@ -276,6 +276,9 @@ section{
     display: block;
     color: #1e7434;
 }
+.res h1{
+    color: #1e7434;
+}
 .bt{
     width: 150%;
     height: 40px;
