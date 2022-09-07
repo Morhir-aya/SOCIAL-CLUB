@@ -28,7 +28,7 @@ def index(request):
 def logout_user(request):
     logout(request)
     messages.success(request, ("you were logged out"))
-    return render(request, 'user/index.html')
+    return redirect('index')
 
 
 def inscription(request):

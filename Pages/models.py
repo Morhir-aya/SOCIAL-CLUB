@@ -1,10 +1,13 @@
 import email
+from pyexpat import model
 from sys import maxunicode
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
 class Post(models.Model):
+    id_user = models.ForeignKey(User, blank= True, null=True ,on_delete=models.CASCADE)
     date = models.DateField()
     titre = models.CharField(max_length=500)
     image = models.ImageField(null=True,blank=True, upload_to='./img/posts')
@@ -15,6 +18,7 @@ class resRestauration(models.Model):
         ('Acceptée','Acceptée'),
         ('Refusée','Refusée'),
     )
+    id_user = models.ForeignKey(User, blank= True, null=True ,on_delete=models.CASCADE)
     Nom_Prenom = models.CharField(max_length=100)
     Email = models.EmailField(max_length=254)
     Nbr_Personne = models.IntegerField()
@@ -37,6 +41,7 @@ class resSport(models.Model):
         ('Acceptée','Acceptée'),
         ('Refusée','Refusée'),
     )
+    id_user = models.ForeignKey(User, blank= True, null=True ,on_delete=models.CASCADE)
     Nom_Prenom = models.CharField(max_length=100)
     Email = models.EmailField(max_length=254)
     activite = models.CharField(max_length=100, choices=act)
