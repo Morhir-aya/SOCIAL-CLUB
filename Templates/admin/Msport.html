@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <title>Reservation As</title>
+    <title>Details As</title>
     <link rel="stylesheet" href="{%static 'css/reservation.css'%}">
 </head>
 <body>
@@ -17,8 +17,8 @@
 
             <div class="menu">
                 <ul>
-                    <li><a href="{% url 'actualite'%}">ACTUALITÉ</a></li>
-                    <li><a href="{% url 'reservation'%}">RÉSERVATIONS</a></li>
+                    <li><a href="{% url 'actualite2'%}">ACTUALITÉ</a></li>
+                    <li><a href="{% url 'admin1'%}">RÉSERVATIONS</a></li>
                     <li><a href="{% url 'about'%}">ÀPROPOS</a></li>
                     <li><a href="{% url 'contact'%}">CONTACT</a></li>
                 </ul>
@@ -36,26 +36,41 @@
 <div class="main_bg">
     <div class="form">
         <div class="form-text">
-            <h1>Activité sportif</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, fugit.</p>
+            <h1>Details</h1>
+            
         </div>
-        <div class="main-form">
-            {% if submitted %}
-               Reservation effectuée !!!
-            {% else %}
-                <form  method="post">
-                {% csrf_token %}
-           
-                   {{ form.as_p }}
+       
+            <form method="get">
 
-                   <div id="submit">
-                        <input type="submit" value="SUBMIT" id="submit">
-                   </div><br>
+                {% for s in res%}
+               <div>
+                    <span>Nom et Prénom: {{s.Nom_Prenom}}</span>
+                    <br><br>
+                    <span>Email: {{s.Email}}</span><br><br>
+                </div>
+                
+                <div>
+                    <span>Activité: {{s.activite}}</span>
+                    <br><br>
+                    <span>Date: {{s.date}}</span><br><br>
+                </div>
 
+                <div>
+                    <span>Heure: {{s.heure}}</span>
+                    <br><br>
+                    <span>Numero de Telephone: {{s.Tel}}</span><br><br>
+                </div>
+                <div id="submit">
+                    <select id="submit" required>
+                        <option value="1">En cours de traitement</option>
+                        <option value="2">Accepté</option>
+                        <option value="3">Refusé</option>
+                    </select>
+                </div>
+                {% endfor %}
 
-               </form>
-            {% endif %}
-        </div>
+            </form>
+        
     </div>
 </div><br><br>
     <footer>

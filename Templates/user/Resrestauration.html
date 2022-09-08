@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <title>Details As</title>
-    <link rel="stylesheet" href="{%static 'css/reservation.css'%}">
+    <title>Reservation R</title>
+    <link rel="stylesheet" href="{% static 'css/reservation.css'%}">
 </head>
 <body>
     <div class="main">
@@ -17,8 +17,8 @@
 
             <div class="menu">
                 <ul>
-                    <li><a href="{% url 'actualite2'%}">ACTUALITÉ</a></li>
-                    <li><a href="{% url 'admin1'%}">RÉSERVATIONS</a></li>
+                    <li><a href="{% url 'actualite'%}">ACTUALITÉ</a></li>
+                    <li><a href="{% url 'reservation'%}">RÉSERVATIONS</a></li>
                     <li><a href="{% url 'about'%}">ÀPROPOS</a></li>
                     <li><a href="{% url 'contact'%}">CONTACT</a></li>
                 </ul>
@@ -30,54 +30,43 @@
                 <a href="{% url 'logout_user' %}"> <button class="btn"> &nbsp;Deconnexion&nbsp; </button></a>
             </div>
             {% endif %}
-
         </div> 
 <br>
 <div class="main_bg">
     <div class="form">
         <div class="form-text">
-            <h1>Details</h1>
-            
+            <h1>Réstauration</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, fugit.</p>
         </div>
         <div class="main-form">
-            <form method="get">
-
-                {% for s in res%}
-                <div>
-                    <span>Nom et Prénom: {{s.Nom_Prenom}}</span>
-                   
-                </div>
-                <div>
-                    <span>Email: {{s.Email}}</span>
-                    
-                </div>
-                <div>
-                    <span>Type d'activité: {{s.activite}}</span>
-                    
-                </div> 
-                <div>
-                    <span>Date: {{s.date}}</span>
-                   
-                </div>
-                <div>
-                    <span>Heure: {{s.date}}</span>
-                   
-                </div>
+            {% if submitted %}
+               Reservation effectuée !!!
+            {% else %}
+           <form  method="post">
+               {% csrf_token %}
+           
+               <div>
+                <label>Nom Prénom: </label>{{ form.Nom_Prenom }}
+                <label>Date: </label>{{ form.date}}
                
-                <div>
-                    <span>Numero de Telephone: {{s.Tel}}</span>
-                  
-                </div>
-                <div id="submit">
-                    <select id="submit" required>
-                        <option value="1">En cours de traitement</option>
-                        <option value="2">Accepté</option>
-                        <option value="3">Refusé</option>
-                    </select>
-                </div>
-                {% endfor %}
+            </div>
+            <div>
+                <label>Email: </label>{{ form.Email}}
+                 <label>Heure: </label>{{ form.heure }}
+            </div>
+            <div>
+                <label>Nombre de personnes: </label>{{ form.Nbr_Personne}}
+            </div>
+            <div>
+                <label>Téléphone: </label>{{ form.Tel }}
+            </div>
+               <div id="submit">
+                   <input type="submit" value="SUBMIT" id="submit">
+               </div><br>
 
-            </form>
+
+        </form>
+        {% endif %}
         </div>
     </div>
 </div><br><br>

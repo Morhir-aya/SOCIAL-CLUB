@@ -70,6 +70,8 @@ ul li a:hover{
     color: #1e7434;
 }
 
+
+
 .search{
     width: 330px;
     float: left;
@@ -209,7 +211,7 @@ section{
     text-align: center;
     margin: 0 auto;
     line-height: 1.7;
-    color:rgb(59, 56, 56)
+    color:#000;
 }
 
 /********************/
@@ -275,10 +277,9 @@ section{
     text-decoration: none;
     display: block;
     color: #1e7434;
+    
 }
-.res h1{
-    color: #1e7434;
-}
+
 .bt{
     width: 150%;
     height: 40px;

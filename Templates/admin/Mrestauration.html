@@ -39,48 +39,41 @@
             <h1>Details</h1>
             
         </div>
-        <div class="main-form">
-            <form method="get">
+        
+            <form class='fr' method="get">
                 {% for rr in res2%}
                 <div>
                     <span>Nom et Prénom: {{rr.Nom_Prenom}}</span>
-                    
-                </div>
-                <div>
-                    <span>Email: {{rr.Email}}</span>
-                    
-                </div>
-                <div>
-                    <span>Nombre de Personne: {{rr.Nbr_Personne}}</span>
-                   
+                    <br><br>
+                    <span>Email: {{rr.Email}}</span><br><br>
                 </div>
                 
-               
-
                 <div>
-                    <span>Date: {{rr.date}}</span>
-                    >
+                    <span>Nombre de Personne: {{rr.Nbr_Personne}}</span>
+                    <br><br>
+                    <span>Date: {{rr.date}}</span><br><br>
                 </div>
+
                 <div>
                     <span>Heure: {{rr.heure}}</span>
-                    
+                    <br><br>
+                    <span>Numero de Telephone: {{rr.Tel}}</span><br><br>
                 </div>
                
-                <div>
-                    <span>Numero de Telephone: {{rr.Tel}}</span>
-                    
-                </div>
-<form>            
-    {{ form.as_p }}
+                
 
-                <div id="submit">
-                    <input type="submit" value="SUBMIT" id="submit">
-                </div><br>
+    <div id="submit">
+        <select id="submit" required>
+            <option value="1">En cours de traitement</option>
+            <option value="2">Accepté</option>
+            <option value="3">Refusé</option>
+        </select>
+    </div><br>
             </form>
                 {% endfor %}
 
             
-        </div>
+        
     </div>
 </div><br><br>
     <footer>

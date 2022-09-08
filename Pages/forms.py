@@ -15,18 +15,10 @@ class Restauration(ModelForm):
     class Meta:
         model = resRestauration
         fields = ('Nom_Prenom','Email','Nbr_Personne','date','heure','Tel')
-
+    
 
 class Sport(ModelForm):
     class Meta:
         model = resSport
         fields = ('Nom_Prenom','Email','activite','date','heure','Tel')
 
-class Rstatus(ModelForm):
-    model = resRestauration
-    fields = ('status')
-
-class Sstatus(ModelForm):
-    model = resSport
-    fields = ('status')
- 

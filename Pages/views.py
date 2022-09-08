@@ -72,7 +72,7 @@ def reservation1(request):
             if 'submitted' in request.GET:
                 submitted = True
 
-        return render(request,'user/reservation1.html', {'form':form, 'submitted':submitted})
+        return render(request,'user/Resrestauration.html', {'form':form, 'submitted':submitted})
 
 def reservation2(request):
         submitted = False
@@ -86,7 +86,7 @@ def reservation2(request):
             if 'submitted' in request.GET:
                 submitted = True
 
-        return render(request,'user/reservation2.html', {'form':form, 'submitted':submitted})
+        return render(request,'user/Ressport.html', {'form':form, 'submitted':submitted})
 
 ###########################
 def actualite2(request):
@@ -96,10 +96,10 @@ def admin1(request):
     return render(request,'admin/admin1.html',{"res":resSport.objects.all(), "res2":resRestauration.objects.all()})
 
 def more1(request):
-    return render(request,'admin/more1.html', {"res2":resRestauration.objects.all()})
+    return render(request,'admin/Mrestauration.html', {"res2":resRestauration.objects.all()})
 
 def more2(request):
-    return render(request,'admin/more2.html',{"res":resSport.objects.all()})
+    return render(request,'admin/Msport.html',{"res":resSport.objects.all()})
 
 def post(request):
     submitted = False

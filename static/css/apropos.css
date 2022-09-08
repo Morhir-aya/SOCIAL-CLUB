@@ -20,7 +20,7 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgb(189, 178, 178);
+    background: #fff;
 }
 
 .icon{
@@ -118,14 +118,14 @@ body{
 section{
     margin-left: auto;
     margin-right: auto;
-    
+    width: max-content;
     display: grid;
     grid-template-columns: 1fr 1fr;
     min-height: 70vh;
     width: 50vw;
     margin: 0 auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 12px
+    border-radius: 0px
 }
 
 
@@ -157,12 +157,12 @@ section{
 .content p{
     padding-bottom: 15px;
     font-weight: 300;
-    opacity: 0.7;
+    
     width: 60%;
     text-align: center;
     margin: 0 auto;
     line-height: 1.7;
-    color:rgb(59, 56, 56)
+    color:#000;
 }
 .links{
     margin: 15px 0;
@@ -177,7 +177,7 @@ section{
 }
 .links li a{
     text-transform: uppercase;
-    color: rgb(59, 56, 56);
+    color: #000;
     text-decoration: none;
 }
 .links li:hover{
